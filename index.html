@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Together For Better Mental Health</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="site-header">
+  T o g e t h e r &nbsp; F o r &nbsp; B e t t e r &nbsp; M e n t a l &nbsp; H e a l t h
+</div>
+
+<div class="app-card">
+  <div class="top-bar" id="topBar"></div>
+
+  <!-- ══ HOME SCREEN ══ -->
+  <div class="screen active" id="screen-home">
+    <div class="nav-row" style="padding-bottom:0;">
+      <button class="back-btn invisible">&#8592;</button>
+      <div class="nav-spacer"></div>
+    </div>
+    <div class="home-layout">
+      <div class="home-left-col">
+        <!-- Calm character floats above the title -->
+        <div class="home-char-wrap">
+          <img id="homeChar" src="" alt="Character" />
+        </div>
+        <h1 class="home-title">Welcome to our<br>Checkpoint</h1>
+        <div class="home-btns">
+          <button class="btn primary" onclick="startQuiz()">Start Quiz</button>
+          <button class="btn" onclick="showContact()">Contact With Us</button>
+        </div>
+      </div>
+      <div class="home-right-col">
+        <div class="info-card">
+          <div class="icon">&#128336;</div>
+          <div class="value">1~2 min</div>
+          <div class="label">Estimate time</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">&#128172;</div>
+          <div class="value">7</div>
+          <div class="label">Questions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUESTION SCREEN ══ -->
+  <div class="screen" id="screen-question">
+    <div class="nav-row">
+      <button class="back-btn" onclick="goBack()">&#8592;</button>
+      <div class="dots-row" id="dotsRow"></div>
+      <div class="nav-spacer"></div>
+    </div>
+    <div class="q-body">
+      <div class="q-char-wrap">
+        <img id="qChar" src="" alt="Character" />
+      </div>
+      <div class="q-right">
+        <div class="question-text" id="questionText"></div>
+        <div class="answers-list"  id="answersList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RESULT SCREEN ══ -->
+  <div class="screen" id="screen-result">
+    <div class="result-nav">
+      <button class="back-btn" onclick="resetQuiz()">&#8592;</button>
+      <span
+        style="font-size:15px;color:var(--teal);font-weight:600;cursor:pointer;"
+        onclick="resetQuiz()">
+        Start new Quiz
+      </span>
+    </div>
+    <div class="result-score-area">
+      <div class="result-score-label">Total GAD-7 Score</div>
+      <div class="result-score-value" id="resultScore">0</div>
+    </div>
+    <div class="result-divider"></div>
+    <div id="resultBand"></div>
+    <div class="result-divider"></div>
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This tool is for educational and awareness purposes only.
+      It is a screening tool, not a clinical diagnosis. It does not replace a professional
+      evaluation. Please consult a qualified mental health professional for an accurate assessment.
+    </div>
+    <button class="btn primary" onclick="resetQuiz()" style="max-width:300px;">
+      Start Over for Next Person
+    </button>
+    <!-- Calm character — bottom-right corner, transparent, blended -->
+    <div class="result-char-wrap">
+      <img id="resultChar" src="" alt="Character" />
+    </div>
+  </div>
+</div>
+
+<!-- images.js must load first so IMAGES is defined before app.js runs -->
+<script src="images.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
